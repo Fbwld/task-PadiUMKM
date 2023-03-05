@@ -33,7 +33,7 @@ const Home = () => {
   );
 }
 const image = {
-  img : require('../assets/header.png')
+  img : require('../assets/header-home.png')
 }
 const styles = StyleSheet.create({
   container: {
@@ -48,8 +48,8 @@ const styles = StyleSheet.create({
     marginTop:50,
   },
   buttonRegister :{
-    paddingHorizontal: 111,
-    paddingVertical: 15,
+    paddingHorizontal: 114,
+    paddingVertical: 10,
     borderRadius: 25,
     borderWidth: 3,
     borderColor: "#31477b",  
@@ -68,9 +68,10 @@ const styles = StyleSheet.create({
     textAlign:'center',
   },
   imgHome:{
-    width: 590,
-    height:320,
-    resizeMode: 'contain'
+    width: 550,
+    height:300,
+    resizeMode: 'contain',
+    marginBottom:25
   }
 });
 export default Home;
