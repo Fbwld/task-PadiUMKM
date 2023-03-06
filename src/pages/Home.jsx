@@ -24,7 +24,7 @@ const Home = ({navigation}) => {
     marginBottom: 10,
     marginTop:10,
     textAlign:'center',
-    fontFamily:'EBGaramond-VariableFont_wght'
+    fontFamily:'garamond-reguler'
     }}>
       Plantly
     </Text>
