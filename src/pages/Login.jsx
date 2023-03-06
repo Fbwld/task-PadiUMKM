@@ -1,77 +1,69 @@
 /* eslint-disable semi */
 /* eslint-disable prettier/prettier */
-import React from 'react';
-import {View, StyleSheet, SafeAreaView, Text, TouchableOpacity, Image } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
+import React, {useState, useEffect} from 'react';
+import {
+  View,
+  Text,
+  Image,
+  StatusBar,
+  ScrollView,
+} from 'react-native';
+import LoginButton from '../components/LoginButton';
+import TextInputEmail from '../components/TextInputEmail';
+import Menu from '../components/Menu';
 
-const Home = () => {
+const Login = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   return (
-        <LinearGradient
-         colors={['#285ca3', '#2d5fb0', '#4e69d0' , '#2b5eab']}
-         style={styles.container}
-         start={{ x: 0, y: 0 }}
-         end={{ x: 1, y: 1 }}
-         >
-          <Image source={image.img} style={styles.imgHome}/>
-          <Text style={styles.textHeader}>Plantly</Text>
-          <Text>Can't seem to keep a plant alive?</Text>
-          <Text>Let us help you change that</Text>
-          <LinearGradient 
-          start={{ x: 0, y: 0 }}
-          end={{x: 1, y: 1 }}
-          colors={['#283854', '#2c3f69', '#344a84', '#335498']}
-          style={styles.buttoLogin}>
-            <TouchableOpacity>
-              <Text>LOGIN</Text>
-            </TouchableOpacity>
-          </LinearGradient>
-          <TouchableOpacity style={styles.buttonRegister}>
-            <Text>SIGN UP</Text>
-          </TouchableOpacity>
-        </LinearGradient>
+    <ScrollView style={{flex: 1,  backgroundColor: '#586cd7'}}>
+    <View
+      style={{
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 60,
+      }}>
+      <Image
+        source={require('../assets/insia.png')}
+        style={{width: 200, height: 200}}
+      />
+      <Text style={{fontSize: 38, fontWeight: 'bold'}}>
+        Welcome Back
+      </Text>
+      <Text style={{marginTop: 5, fontSize: 15}}>
+        Login to your account
+      </Text>
+    </View>
+    <View style={{
+      alignItems:'center',
+      marginTop:50
+    }}>
+      <TextInputEmail
+        state={email}
+        set={setEmail}
+        placeholder="Username"
+        icon="envelope"
+        isPassword={false}
+      />
+       <TextInputEmail
+        state={email}
+        set={setEmail}
+        placeholder="Paasword"
+        icon="envelope"
+        isPassword={false}
+      />
+      <Menu signupText="Remember Me" forgotPasswordText="Lupa Password?" />
+      <LoginButton text="LOGIN"/>
+      <Text>Don't have an account? <Text style={{ fontWeight: 'bold', textDecorationLine:'underline'}}>Sign Up</Text></Text>
 
+    </View>
+
+
+  </ScrollView>
   );
 }
 const image = {
   img : require('../assets/header-home.png')
 }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-  },
-  buttoLogin :{
-    paddingHorizontal: 120,
-    paddingVertical: 15,
-    borderRadius: 25,
-    marginBottom: 10,
-    marginTop:50,
-  },
-  buttonRegister :{
-    paddingHorizontal: 114,
-    paddingVertical: 10,
-    borderRadius: 25,
-    borderWidth: 3,
-    borderColor: "#31477b",  
-  },
-  linearGradient: {
-    width:'100%',
-    height:'100%',
-    justifyContent:'center',
-    alignContent:'center',
-    paddingLeft:50,
-    paddingRight:50,
-  },
-  textHeader:{
-    fontSize:50,
-    marginBottom: 10,
-    textAlign:'center',
-  },
-  imgHome:{
-    width: 550,
-    height:300,
-    resizeMode: 'contain',
-    marginBottom:25
-  }
-});
-export default Home;
+
+export default Login;
