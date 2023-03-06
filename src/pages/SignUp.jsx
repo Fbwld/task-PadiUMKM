@@ -7,6 +7,7 @@ import {
   Image,
   StatusBar,
   ScrollView,
+  TouchableOpacity
 } from 'react-native';
 import LoginButton from '../components/LoginButton';
 import TextInputEmail from '../components/TextInputEmail';
@@ -14,8 +15,17 @@ import TextInputEmail from '../components/TextInputEmail';
 const SignUp = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [username, setUsername] = useState('');
   return (
     <ScrollView style={{flex: 1,  backgroundColor: '#586cd7'}}>
+        <TouchableOpacity  onPress={()=>navigation.goBack()} style={{
+        position:'absolute',
+        zIndex:1,
+        marginTop:35,
+        marginLeft:25
+      }}>
+        <Image source={require('../assets/back.png')}/>
+      </TouchableOpacity>
     <View
       style={{
         justifyContent: 'center',
@@ -36,11 +46,11 @@ const SignUp = ({navigation}) => {
     </View>
     <View style={{
       alignItems:'center',
-      marginTop:50
+      marginTop:40
     }}>
       <TextInputEmail
-        state={email}
-        set={setEmail}
+        state={username}
+        set={setUsername}
         placeholder="Username"
         icon="user"
         isPassword={false}

@@ -25,12 +25,26 @@ const LoginButton = props => {
         <TouchableOpacity style={{
             width: 290,
             paddingVertical: 10,
-            borderRadius:90            
+            borderRadius:90,
+            shadowColor: "#000",
+            shadowOffset: {
+                width: 0,
+                height: 5,
+            },
+            shadowOpacity: 2,
+            shadowRadius: 6.27,
+
+            elevation: 20,
         }}
         onPress={props.onPress}
         >
-        <Text style={{color: '#FFFFFF', textAlign: 'center', fontWeight: 'bold'}}>
-            {props.text}
+        <Text style={{
+        color: '#FFFFFF', 
+        textAlign: 'center',
+        fontWeight: 'bold',
+}}
+        >
+        {props.text}
         </Text>
         </TouchableOpacity>
     </LinearGradient>
