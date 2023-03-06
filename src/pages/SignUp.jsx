@@ -12,7 +12,7 @@ import LoginButton from '../components/LoginButton';
 import TextInputEmail from '../components/TextInputEmail';
 import Menu from '../components/Menu';
 
-const Login = ({navigation}) => {
+const SignUp = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   return (
@@ -28,10 +28,10 @@ const Login = ({navigation}) => {
         style={{width: 200, height: 200}}
       />
       <Text style={{fontSize: 38, fontWeight: 'bold'}}>
-        Welcome Back
+        Register
       </Text>
       <Text style={{marginTop: 5, fontSize: 15}}>
-        Login to your account
+        Create your account
       </Text>
     </View>
     <View style={{
@@ -48,22 +48,38 @@ const Login = ({navigation}) => {
        <TextInputEmail
         state={email}
         set={setEmail}
+        placeholder="Email address"
+        icon="envelope"
+        isPassword={false}
+      />
+      <TextInputEmail
+        state={email}
+        set={setEmail}
         placeholder="Password"
         icon="envelope"
         isPassword={false}
       />
-      <Menu signupText="Remember Me" forgotPasswordText="Lupa Password?" />
-      <LoginButton text="LOGIN"/>
-      <Text>Don't have an account? 
+      <TextInputEmail
+        state={email}
+        set={setEmail}
+        placeholder="Confirm password"
+        icon="envelope"
+        isPassword={false}
+      />
+      <Text>By registering, you are agreein tp our  Terms of us and Privacy Policy.</Text>
+      <LoginButton text="REGISTER"/>
+      <Text>Already have an account? 
         <Text 
-        style={{ fontWeight: 'bold', 
+        style={{ fontWeight: 'bold',
         textDecorationLine:'underline'
         }}
-        onPress={()=>navigation.navigate('SignUp')}>
-          Sign Up
-          </Text>
+        onPress={()=>navigation.navigate('Login')}>
+            Login
+        </Text>
         </Text>
     </View>
+
+
   </ScrollView>
   );
 }
@@ -71,4 +87,4 @@ const image = {
   img : require('../assets/header-home.png')
 }
 
-export default Login;
+export default SignUp;

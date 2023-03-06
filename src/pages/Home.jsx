@@ -19,7 +19,8 @@ const Home = ({navigation}) => {
     <Text>Let us help you change that</Text>
     <LoginButton text="LOGIN" 
     onPress={()=>navigation.navigate('Login')}/>
-    <TouchableOpacity style={styles.buttonRegister}>
+    <TouchableOpacity style={styles.buttonRegister} 
+    onPress={()=>navigation.navigate('SignUp')}>
       <Text>SIGN UP</Text>
     </TouchableOpacity>
     </LinearGradient>

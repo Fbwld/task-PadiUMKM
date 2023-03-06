@@ -23,7 +23,7 @@ const LoginButton = props => {
         marginTop:50,
     }}>
         <TouchableOpacity style={{
-            paddingHorizontal: 120,
+            width: 290,
             paddingVertical: 10,
             borderRadius:90            
         }}

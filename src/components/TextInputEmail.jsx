@@ -35,8 +35,8 @@ const TextInputEmail = props => {
               borderTopRightRadius: 10,
               borderBottomRightRadius: 10,
               paddingVertical: 10,
-              paddingHorizontal:170,
-              paddingLeft: 12,
+              width:250,
+              paddingLeft: 5,
               color:'#285ca3',
               
             }}
