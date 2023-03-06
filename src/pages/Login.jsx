@@ -21,11 +21,13 @@ const Login = ({navigation}) => {
       style={{
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 60,
       }}>
       <Image
-        source={require('../assets/insia.png')}
-        style={{width: 200, height: 200}}
+        source={require('../assets/test2.png')}
+        style={{width: 600, 
+        height: 200,
+        resizeMode: 'contain',
+        }}
       />
       <Text style={{fontSize: 38, fontWeight: 'bold'}}>
         Welcome Back
@@ -42,22 +44,22 @@ const Login = ({navigation}) => {
         state={email}
         set={setEmail}
         placeholder="Username"
-        icon="envelope"
+        icon="user"
         isPassword={false}
       />
        <TextInputEmail
-        state={email}
-        set={setEmail}
+        state={password}
+        set={setPassword}
+        icon="lock"
         placeholder="Password"
-        icon="envelope"
-        isPassword={false}
+        isPassword={true}
       />
       <Menu signupText="Remember Me" forgotPasswordText="Lupa Password?" />
       <LoginButton text="LOGIN"/>
-      <Text>Don't have an account? 
+      <Text>Don't have an account?
         <Text 
         style={{ fontWeight: 'bold', 
-        textDecorationLine:'underline'
+        textDecorationLine:'underline',
         }}
         onPress={()=>navigation.navigate('SignUp')}>
           Sign Up

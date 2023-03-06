@@ -10,7 +10,6 @@ import {
 } from 'react-native';
 import LoginButton from '../components/LoginButton';
 import TextInputEmail from '../components/TextInputEmail';
-import Menu from '../components/Menu';
 
 const SignUp = ({navigation}) => {
   const [email, setEmail] = useState('');
@@ -21,11 +20,12 @@ const SignUp = ({navigation}) => {
       style={{
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 60,
       }}>
       <Image
-        source={require('../assets/insia.png')}
-        style={{width: 200, height: 200}}
+        source={require('../assets/test2.png')}
+        style={{width: 600, 
+        height: 200,
+        resizeMode: 'contain',}}
       />
       <Text style={{fontSize: 38, fontWeight: 'bold'}}>
         Register
@@ -42,7 +42,7 @@ const SignUp = ({navigation}) => {
         state={email}
         set={setEmail}
         placeholder="Username"
-        icon="envelope"
+        icon="user"
         isPassword={false}
       />
        <TextInputEmail
@@ -52,26 +52,29 @@ const SignUp = ({navigation}) => {
         icon="envelope"
         isPassword={false}
       />
-      <TextInputEmail
-        state={email}
-        set={setEmail}
+       <TextInputEmail
+        state={password}
+        set={setPassword}
+        icon="lock"
         placeholder="Password"
-        icon="envelope"
-        isPassword={false}
+        isPassword={true}
       />
-      <TextInputEmail
-        state={email}
-        set={setEmail}
-        placeholder="Confirm password"
-        icon="envelope"
-        isPassword={false}
+       <TextInputEmail
+        state={password}
+        set={setPassword}
+        icon="lock"
+        placeholder="Confirm Password"
+        isPassword={true}
       />
-      <Text>By registering, you are agreein tp our  Terms of us and Privacy Policy.</Text>
+      <Text style={{
+        marginHorizontal: 60,
+        marginTop: 10,
+        }}>By registering, you are agreein tp our  Terms of us and Privacy Policy.</Text>
       <LoginButton text="REGISTER"/>
-      <Text>Already have an account? 
+      <Text>Already have an account?  
         <Text 
         style={{ fontWeight: 'bold',
-        textDecorationLine:'underline'
+        textDecorationLine:'underline',
         }}
         onPress={()=>navigation.navigate('Login')}>
             Login

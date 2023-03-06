@@ -2,15 +2,13 @@ import React, {useState, useEffect} from 'react';
 import {
   View,
   Text,
-  Image,
-  StatusBar,
-  TextInput,
-  CheckBox,
   TouchableOpacity,
 } from 'react-native';
+import CheckBox from '@react-native-community/checkbox';
 
 
 const Menu = props => {
+    const [isSelected, setSelection] = useState(false);
   return (
     <View
       style={{
@@ -19,9 +17,17 @@ const Menu = props => {
         marginTop: 10,
         paddingBottom: 20,
       }}>
-      <TouchableOpacity style={{flex: 1}}>
+      <View style={{ flexDirection: 'row'}}>
+        <CheckBox
+          value={isSelected}
+          onValueChange={setSelection}
+          style={{alignSelf: 'center',}}
+        />
+        <Text style={{margin: 5,fontWeight: 'bold'}}>Remember me</Text>
+      </View>  
+      {/* <TouchableOpacity style={{flex: 1}}>
         <Text style={{fontWeight: 'bold'}}>{props.signupText}</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
       <TouchableOpacity
         style={{flex: 1, justifyContent: 'center', alignItems: 'flex-end'}}>
         <Text style={{fontWeight: 'bold'}}>{props.forgotPasswordText}</Text>

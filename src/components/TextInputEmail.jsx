@@ -3,6 +3,7 @@ import {View, Text, Image, StatusBar, TextInput} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
+
 const TextInputEmail = props => {
   return (
     <View>
@@ -16,12 +17,12 @@ const TextInputEmail = props => {
             borderTopLeftRadius: 10,
             borderBottomLeftRadius: 10,
           }}>
-          <Icon name={props.icon} size={20} color="#285ca3" />
+          <Icon name={props.icon} solid size={20} color="#285ca3" />
         </View>
         <LinearGradient
         start={{ x: 0, y: 0 }}
         end={{x: 1, y: 1 }}
-        colors={['#c1c9f0','#bcc4ee','#8c9be4']}
+        colors={['#c1c9f0','#b0baeb','#9aa8e7','#8c9be4']}
         style={{
             paddingHorizontal: 2,
             paddingVertical: 2,

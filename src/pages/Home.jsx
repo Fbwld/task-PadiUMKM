@@ -1,9 +1,10 @@
 /* eslint-disable semi */
 /* eslint-disable prettier/prettier */
-import React from 'react';
+import React , {useState, useEffect}from 'react';
 import {View, StyleSheet, SafeAreaView, Text, TouchableOpacity, Image } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import LoginButton from '../components/LoginButton';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const Home = ({navigation}) => {
   return (
@@ -17,6 +18,8 @@ const Home = ({navigation}) => {
     <Text style={styles.textHeader}>Plantly</Text>
     <Text>Can't seem to keep a plant alive?</Text>
     <Text>Let us help you change that</Text>
+    <Icon name="check" size={30} color="#900" />
+
     <LoginButton text="LOGIN" 
     onPress={()=>navigation.navigate('Login')}/>
     <TouchableOpacity style={styles.buttonRegister} 
