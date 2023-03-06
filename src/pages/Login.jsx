@@ -65,7 +65,7 @@ const Login = ({navigation}) => {
         placeholder="Password"
         isPassword={true}
       />
-      <Menu signupText="Remember Me" forgotPasswordText="Lupa Password?" />
+      <Menu signupText="Remember Me" forgotPasswordText="Forgot Password?" />
       <LoginButton text="LOGIN"/>
       <Text>Don't have an account?
         <Text 

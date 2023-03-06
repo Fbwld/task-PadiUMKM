@@ -9,18 +9,35 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 const Home = ({navigation}) => {
   return (
     <LinearGradient
-    colors={['#285ca3', '#2d5fb0', '#4e69d0' , '#2b5eab']}
+    colors={['#285ca3', '#4e69d0' , '#2b5eab']}
     style={styles.container}
     start={{ x: 0, y: 0 }}
     end={{ x: 1, y: 1 }}
     >
-    <Image source={image.img} style={styles.imgHome}/>
-    <Text style={styles.textHeader}>Plantly</Text>
+    <Image source={image.img} style={{ 
+    width: 550,
+    height:350,
+    resizeMode: 'contain',
+    marginBottom:25}}/>
+    <Text style={{ 
+    fontSize:50,
+    marginBottom: 10,
+    marginTop:10,
+    textAlign:'center',
+    fontFamily:'EBGaramond-VariableFont_wght'
+    }}>
+      Plantly
+    </Text>
     <Text>Can't seem to keep a plant alive?</Text>
     <Text>Let us help you change that</Text>
     <LoginButton text="LOGIN" 
     onPress={()=>navigation.navigate('Login')}/>
-    <TouchableOpacity style={styles.buttonRegister} 
+    <TouchableOpacity style={{ width: 290,
+    alignItems:'center',
+    paddingVertical: 10,
+    borderRadius: 25,
+    borderWidth: 3,
+    borderColor: "#31477b"}} 
     onPress={()=>navigation.navigate('SignUp')}>
       <Text>SIGN UP</Text>
     </TouchableOpacity>
@@ -40,23 +57,5 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     marginTop:50,
   },
-  buttonRegister :{
-    paddingHorizontal: 114,
-    paddingVertical: 10,
-    borderRadius: 25,
-    borderWidth: 3,
-    borderColor: "#31477b",  
-  },
-  textHeader:{
-    fontSize:50,
-    marginBottom: 10,
-    textAlign:'center',
-  },
-  imgHome:{
-    width: 550,
-    height:300,
-    resizeMode: 'contain',
-    marginBottom:25
-  }
 });
 export default Home;

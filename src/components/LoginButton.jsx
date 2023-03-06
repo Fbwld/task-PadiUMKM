@@ -33,7 +33,6 @@ const LoginButton = props => {
             },
             shadowOpacity: 2,
             shadowRadius: 6.27,
-
             elevation: 20,
         }}
         onPress={props.onPress}
